@@ -6,11 +6,11 @@ public class OverlappingControl{
 				// 경우 1: 0 미만
 				// 경우 2: 10 이하 0 초과
 				// 경우 3: 10 초과
-		int num = -10;
+		int num = 0;
 
-	if(num < 0 ){ // num이 0보다 작다면 0 미만을 출력해라.
+	if(num ==  0 ){ // num이 0보다 작다면 0 미만을 출력해라.
 		
-			System.out.println(" 0 미만");
+			System.out.println(" 0 ");
 
 	}else { // 만족하지 않는다면 조건의 num이 10보다 크다면 10초과를 출력하고 
 
