@@ -9,8 +9,13 @@ public class Printer{
 				boolean result1 = p1.println(true);
 				System.out.println("PrinterExample 의 조건은? " + result1);
 
-				double result2 = p1.println(5.7);
+				double result2 =  p1.println(5.7);
 				System.out.println("PrinterExample 의 실수는? " + result2);
+
+
+				String result3 = p1.println("홍길동");
+				System.out.println("PrinterExample 의 이름은? " + result3);
+
 
 		}
 }
