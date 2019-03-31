@@ -7,7 +7,7 @@ public class CalculatorService{
 		private int op; //연산자 구분 번호 +:1 -:2 *:3 /:4
 		private double temp; //숫자 저장소 
 		private boolean state = true; //사용자가 숫자버튼을 연속적으로 눌렀는지 검사 true 면 한자리 false 면 두자리
-		private boolean opState = true; //연산자 버튼을 연속으로 눌렀는지 검사 연속으로 누른다면 true
+		private boolean opState = false; //연산자 버튼을 연속으로 눌렀는지 검사 연속으로 누른다면 true
 
 		public CalculatorService(CalculatorController calculatorController){
 				cc = calculatorController;
@@ -39,51 +39,70 @@ public class CalculatorService{
 
 		public void push(String str){
 		
-				if(state) {
-						
+				if(state){
 						c.numL.setText(str);
-				} else {
-						c.numL.setText(c.numL.getText() + str);
-						state = false;
+						
 				}
+					else {
+						c.numL.setText(c.numL.getText() + str);
+						
+						state = true;
+					}
 		}
 
 	public void operator(String str){
+			
 			if(str.equals("+")){
-					op = 1;
-					if(opState) result();
-					opState = true;
 					c.operL.setText("+");
+					op = 1;
+					if(!opState) result();
+					temp = (new Double(c.numL.getText())).doubleValue(); 
+					opState = true;
+					
 			} else if(str.equals("-")){
+					c.operL.setText("-");
 					op = 2;
 					if(opState) result();
+					temp = (new Double(c.numL.getText())).doubleValue(); 
 					opState = true;
+
 			}/* else if(str.equlas("*")){
 					op = 3;
-					if(opState) result();
-					opState = true;
+					if(opState){
+						result();
+						c.operL.setText("*");
+						opState = true;
+					}
+
 			} else if(str.equlas("/")){
+					c.operL.setText("/");
 					op = 4;
-					if(opState) result();
-					opState = true;
-			}*/ else {
+					if(opState)result();
+						
+						opState = true;
+			} */
+			else {
 					result();
-			}
-			temp = (new Double(c.numL.getText())).doubleValue();
-			state = true;
+					temp = (new Double(c.numL.getText())).doubleValue();
+					state = false;
+			}	
 		}
 			
 		public void result(){
+				
 				double result = 0;
-				double in = (new Double(c.numL.getText())).doubleValue();
+			    double in =(new Double(c.numL.getText())).doubleValue();
 
 				switch(op){
-						case 1: result = temp + in; break;
-						case 2: result = temp - in; break;
-						case 3: result = temp * in; break;
-						case 4: result = temp / in; break;
-				} c.numL.setText(result + "");
-					opState = false;
+						
+					case 1: result = temp + in; break;
+					case 2: result = temp - in; break;
+					case 3: result = temp * in; break;
+					case 4: result = temp / in; break;
+						
+				}
+				c.numL.setText(result + "");
+				opState = false;
 		}
 	}
 
