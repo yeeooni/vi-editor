@@ -5,11 +5,12 @@ public class CalculatorService{
 		private CalculatorController cc;
 		private Calculator c;
 		private int op; //연산자 구분 번호 +:1 -:2 *:3 /:4
-		private double temp; //숫자 저장소 
+		private double temp; //첫번째 받는 숫자의 값
+		private double in; // 두번째 받는 숫자의 값
 		private boolean state = true; //사용자가 숫자버튼을 연속적으로 눌렀는지 검사 true 면 한자리 false 면 두자리
 		private boolean opState = false; //연산자 버튼을 연속으로 눌렀는지 검사 연속으로 누른다면 true
 		private double result = 0;
-		private double in; // 두번째 받는 숫자의 값
+		
 
 		public CalculatorService(CalculatorController calculatorController){
 				cc = calculatorController;
@@ -40,16 +41,15 @@ public class CalculatorService{
 		}
 
 		public void push(String str){
-			c.numL.setText(str);
+			
+				c.numL.setText(str);
 
-		//		if(state){
-											
+		//		if(state){									
 		//		}
-				//	else {
-				//		c.numL.setText(c.numL.getText());
-						
-				//		state = true;
-				//	}
+		//			else {
+		//				c.numL.setText(c.numL.getText());
+		//				state = true;
+		//			}
 		}
 
 	public void operator(String str){
