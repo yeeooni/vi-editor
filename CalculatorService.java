@@ -10,6 +10,7 @@ public class CalculatorService{
 		private boolean state = true; //사용자가 숫자버튼을 연속적으로 눌렀는지 검사 true 면 한자리 false 면 두자리
 		private boolean opState = false; //연산자 버튼을 연속으로 눌렀는지 검사 연속으로 누른다면 true
 		private double result = 0;
+		private String numstr = "";
 		
 
 		public CalculatorService(CalculatorController calculatorController){
@@ -44,12 +45,11 @@ public class CalculatorService{
 			
 				c.numL.setText(str);
 
-		//		if(state){									
-		//		}
-		//			else {
-		//				c.numL.setText(c.numL.getText());
-		//				state = true;
-		//			}
+				if(!state){
+					c.numL.setText(str);
+					numstr += str;
+					c.numL.setText(numstr);
+				}
 		}
 
 	public void operator(String str){
@@ -85,6 +85,7 @@ public class CalculatorService{
 			else {
 				
 					result();
+					numstr = "";
 					temp = (new Double(c.numL.getText())).doubleValue();
 					state = false;
 			}	
@@ -103,6 +104,7 @@ public class CalculatorService{
 						
 				}
 				c.numL.setText(result + "");
+			//	c.numL.setText(numstr + "");
 				temp = in;
 				opState = false;
 		}
