@@ -8,6 +8,8 @@ public class CalculatorService{
 		private double temp; //숫자 저장소 
 		private boolean state = true; //사용자가 숫자버튼을 연속적으로 눌렀는지 검사 true 면 한자리 false 면 두자리
 		private boolean opState = false; //연산자 버튼을 연속으로 눌렀는지 검사 연속으로 누른다면 true
+		private double result = 0;
+		private double in; // 두번째 받는 숫자의 값
 
 		public CalculatorService(CalculatorController calculatorController){
 				cc = calculatorController;
@@ -38,16 +40,16 @@ public class CalculatorService{
 		}
 
 		public void push(String str){
-		
-				if(state){
-						c.numL.setText(str);
+			c.numL.setText(str);
+
+		//		if(state){
+											
+		//		}
+				//	else {
+				//		c.numL.setText(c.numL.getText());
 						
-				}
-					else {
-						c.numL.setText(c.numL.getText() + str);
-						
-						state = true;
-					}
+				//		state = true;
+				//	}
 		}
 
 	public void operator(String str){
@@ -55,33 +57,33 @@ public class CalculatorService{
 			if(str.equals("+")){
 					c.operL.setText("+");
 					op = 1;
-					if(!opState) result();
+					if(!opState)
 					temp = (new Double(c.numL.getText())).doubleValue(); 
 					opState = true;
 					
 			} else if(str.equals("-")){
 					c.operL.setText("-");
 					op = 2;
-					if(opState) result();
+					if(!opState)
 					temp = (new Double(c.numL.getText())).doubleValue(); 
 					opState = true;
 
-			}/* else if(str.equlas("*")){
+			} else if(str.equals("*")){
+					c.operL.setText("*");
 					op = 3;
-					if(opState){
-						result();
-						c.operL.setText("*");
-						opState = true;
-					}
+					if(!opState)
+						temp = (new Double(c.numL.getText())).doubleValue();
+						opState = true;	
 
-			} else if(str.equlas("/")){
+			} else if(str.equals("/")){
 					c.operL.setText("/");
 					op = 4;
-					if(opState)result();
-						
+					if(!opState)
+						temp = (new Double(c.numL.getText())).doubleValue();
 						opState = true;
-			} */
+			} 
 			else {
+				
 					result();
 					temp = (new Double(c.numL.getText())).doubleValue();
 					state = false;
@@ -90,9 +92,8 @@ public class CalculatorService{
 			
 		public void result(){
 				
-				double result = 0;
-			    double in =(new Double(c.numL.getText())).doubleValue();
-
+				in	=(new Double(c.numL.getText())).doubleValue();
+			    
 				switch(op){
 						
 					case 1: result = temp + in; break;
@@ -102,6 +103,7 @@ public class CalculatorService{
 						
 				}
 				c.numL.setText(result + "");
+				temp = in;
 				opState = false;
 		}
 	}

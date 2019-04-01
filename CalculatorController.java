@@ -14,11 +14,11 @@ public class CalculatorController implements ActionListener{
 
 	@Override
 	public void actionPerformed(ActionEvent e){
-		Object ob = e.getSource();
-		String str = e.getActionCommand(); //이벤트가 발생하는 버튼을 문자열로 리턴
-				
-		Button b = (Button) ob;
-		String bStr = b.getLabel();
+//		Object ob = e.getSource();
+//		Button b = (Button) ob;
+//		String bStr = b.getLabel();
+		String str = e.getActionCommand(); //이벤트가 발생하는 버튼을 문자열로 리턴		
+
 
 
 		if(str.equals("종료")){
@@ -34,7 +34,7 @@ public class CalculatorController implements ActionListener{
 			}
 		
 		if(str.equals("C")){
-			calculatorService.clear();
+			calculatorService.clear();		
 		}
 	
 	}
