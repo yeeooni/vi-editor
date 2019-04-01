@@ -7,6 +7,7 @@ public class MultipleCheck{
 	int three = 0;
 	int five = 0;
 
+	//num의 숫자만큼 반복해.
 		for(int i = 1; i <= num; i++){
 			System.out.print(i + " .");
 				
@@ -27,18 +28,11 @@ public class MultipleCheck{
 				System.out.println(); //개행이 필요해
 		}
 					
-		System.out.println("\n");
-		System.out.println("==== 출력 횟수 ====");
-		System.out.println("2의 배수 : " + two);
-		System.out.println("3의 배수 : " + three);
-		System.out.println("5의 배수 : " + five);
+	System.out.println("\n");
+	System.out.println("==== 출력 횟수 ====");
+	System.out.println("2의 배수 : " + two);
+	System.out.println("3의 배수 : " + three);
+	System.out.println("5의 배수 : " + five);
+	
 	}
-
-
-
-
-
-
-
-
 }
