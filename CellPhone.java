@@ -1,12 +1,10 @@
 public class CellPhone{
 		
 		// field
-
 		String model;
 		String color;
 
 		// Constructor
-
 		public CellPhone(String model, String color){
 			super();
 			this.model = model;
@@ -14,7 +12,6 @@ public class CellPhone{
 		}
 
 		// method
-
 		public void powerOn(){
 			System.out.println("전원을 켭니다.");
 		}
