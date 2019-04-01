@@ -26,8 +26,8 @@ public class CalculatorController implements ActionListener{
 		}
 		
 		if(str.equals("C")){
-			calculatorService.clear();		
-		
+			calculatorService.clear();
+			return;
 		}
 
 		//	calculator.numL.setText("");
