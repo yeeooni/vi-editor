@@ -24,18 +24,33 @@ public class CalculatorController implements ActionListener{
 		if(str.equals("종료")){
 				calculatorService.exit();
 		}
-
-		else if(calculatorService.inNumber(str)){
-				calculatorService.push(str);
-			
-		}
-			else{
-				calculatorService.operator(str);
-			}
 		
 		if(str.equals("C")){
 			calculatorService.clear();		
+		
 		}
-	
+
+		//	calculator.numL.setText("");
+
+		if(calculatorService.inNumber(str)){
+				calculatorService.push(str);		
+			//	calculatorService.operator(str)
+		}
+		else{
+				//calculatorService.opfalse(str);
+				//calculatorService.clear();
+				calculatorService.operator(str);
+			}
+						
+			/*if(str.equals("+")){
+				calculatorService.inNumber(str);
+				return;
+			} else if(str.equals("-")){
+				calculatorService.inNumber(str);
+				return;
+			} else if(str.equals("-")){
+				calculatorService.inNumber(str);
+				return;
+			}*/
 	}
 }
