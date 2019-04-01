@@ -11,8 +11,8 @@ public class MultipleCheck{
 			System.out.print(i + " .");
 				
 			if(i % 2 == 0){
-					System.out.print(" 2의 배수");
-					two++;
+				System.out.print(" 2의 배수");
+				two++;
 			}
 
 			if(i % 3 == 0){
@@ -24,18 +24,14 @@ public class MultipleCheck{
 				System.out.print(" 5의 배수");
 				five++;
 			}
-					System.out.println(); //개행이 필요해
+				System.out.println(); //개행이 필요해
 		}
 					
-					System.out.println("\n");
-			System.out.println("==== 출력 횟수 ====");
-			System.out.println("2의 배수 : " + two);
-			System.out.println("3의 배수 : " + three);
-			System.out.println("5의 배수 : " + five);
-			
-
-
-
+		System.out.println("\n");
+		System.out.println("==== 출력 횟수 ====");
+		System.out.println("2의 배수 : " + two);
+		System.out.println("3의 배수 : " + three);
+		System.out.println("5의 배수 : " + five);
 	}
 
 
