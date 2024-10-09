@@ -22,4 +22,8 @@
 - [ ] 디렉터리 정리
 - [ ] CI/CD 구축
 - [ ] 필수 환경설정 세팅
+- [X] vim-plug install (_[vim-plug](https://github.com/junegunn/vim-plug)_, vi 노말모드에서 명령어를 통한 손쉬운 플러그인 설치가 가능하다.) 
+- [X] NERDTree plug install
+- [ ] coc.nvim install (코드 자동완성)
+- [ ] coc-java install
 
