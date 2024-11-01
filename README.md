@@ -39,7 +39,11 @@
 - git submodule add repository_url [path]
 - git submodule init
 - git submodule update
+
+- git submodule upate --init
+
 - git submodule status
+- git submodule update --remote [submodule name]
 
 서브모듈 삭제 방법
 
