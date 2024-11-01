@@ -16,7 +16,8 @@
 - 환경파일
 - 카테고리
 - 코드
-- submodule (2024.10.14 after) - 자바 기술면접대비
+- submodule added exercise_book (2024.10.14 after) - 자바 기술면접대비
+
 ---
 - **algorithm** 알고리즘
 - **data-structure** 자료구조
